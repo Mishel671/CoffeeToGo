@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Coffee To Go</string>
+    <string name="splash_title">CoffeeToGo</string>
+    <string name="tutorial_first_title">CoffeeToGo</string>
+    <string name="tutorial_first_desc">Это приложение в котором вы можете заказать кофе онлайн и забрать его в близжайшей к вам кофейне.</string>
+    <string name="tutorial_second_title">Удобная доставка</string>
+    <string name="tutorial_second_desc">Заказывая кофе в приложении вы забираете там где вам удобно</string>
+    <string name="tutorial_third_title">Большой выбор</string>
+    <string name="tutorial_third_desc">Огромный каталог кофе на ваш вкус</string>
+    <string name="button_next">Далее</string>
+    <string name="sign_in">Войти</string>
+    <string name="hint_email">Логин</string>
+    <string name="hint_password">Пароль</string>
+    <string name="empty_error">Введите значения</string>
+    <string name="label_catalog">Каталог</string>
+    <string name="label_cart">Корзина</string>
+    <string name="label_share">Поделиться</string>
+    <string name="label_user">Профиль</string>
+    <string name="drink_cost">%d р</string>
+    <string name="cart_title">%d. %s - %d руб</string>
+    <string name="result_cost">Итого: %d руб.</string>
+</resources>

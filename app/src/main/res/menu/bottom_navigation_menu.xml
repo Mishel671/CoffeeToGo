@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/catalog"
+        android:enabled="true"
+        android:icon="@drawable/ic_shop"
+        android:title="@string/label_catalog"/>
+    <item
+        android:id="@+id/share"
+        android:enabled="true"
+        android:icon="@drawable/ic_share"
+        android:title="@string/label_share"/>
+    <item
+        android:id="@+id/user"
+        android:enabled="true"
+        android:icon="@drawable/ic_user"
+        android:title="@string/label_user"/>
+</menu>
