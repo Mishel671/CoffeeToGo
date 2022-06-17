@@ -54,11 +54,8 @@ public class CartViewModel extends AndroidViewModel {
                 )
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .subscribe(cartItems -> {
-                    Log.d("CartLog", String.valueOf(cartItems.get(0).getItemCount()));
                     cartList.postValue(cartItems);
                     resultCost.postValue(countResult(cartItems));
-                }, throwable -> {
-                    Log.d("CartLog", throwable.getMessage());
                 });
         compositeDisposable.add(disposable);
     }

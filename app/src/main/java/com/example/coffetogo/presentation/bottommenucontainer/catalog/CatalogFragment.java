@@ -1,7 +1,6 @@
 package com.example.coffetogo.presentation.bottommenucontainer.catalog;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +17,7 @@ import com.example.coffetogo.databinding.FragmentCatalogBinding;
 import com.example.coffetogo.presentation.bottommenucontainer.cart.CartFragment;
 import com.example.coffetogo.presentation.bottommenucontainer.catalog.adapter.CatalogListAdapter;
 import com.example.coffetogo.presentation.bottommenucontainer.catalog.adapter.OnCatalogClickListener;
+import com.example.coffetogo.presentation.bottommenucontainer.catalog.detailcatalog.DetailCatalogFragment;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -50,9 +50,14 @@ public class CatalogFragment extends Fragment {
 
 
     private void setRecyclerView() {
-        OnCatalogClickListener listener = item -> {
-            Log.d("CatalogLog", item.getName());
-            viewModel.addCartItem(item);
+        OnCatalogClickListener listener = (item, imageUrl) -> {
+            requireActivity().getSupportFragmentManager().beginTransaction()
+                    .add(
+                            R.id.fragmentContainerBottomNav,
+                            DetailCatalogFragment.newInstance(item, imageUrl)
+                    )
+                    .addToBackStack(null)
+                    .commit();
         };
         adapter = new CatalogListAdapter(requireActivity(), listener);
         binding.recyclerView.setAdapter(adapter);
@@ -73,7 +78,7 @@ public class CatalogFragment extends Fragment {
         });
         binding.cartButton.setOnClickListener(button -> {
             requireActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragmentContainerBottomNav, CartFragment.newInstance())
+                    .add(R.id.fragmentContainerBottomNav, CartFragment.newInstance())
                     .addToBackStack(null)
                     .commit();
         });

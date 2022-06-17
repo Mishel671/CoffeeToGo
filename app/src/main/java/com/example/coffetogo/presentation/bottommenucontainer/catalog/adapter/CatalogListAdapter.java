@@ -15,7 +15,7 @@ import com.squareup.picasso.Picasso;
 public class CatalogListAdapter extends ListAdapter<CatalogItem, CatalogItemViewHolder> {
 
     private final Context context;
-    private static final String imageUrl = "http://192.168.2.219/catalog/getProductIcon/";
+    private static final String imagesUrl = "http://192.168.2.219/catalog/getProductIcon/";
     public String drinkType = "";
 
 
@@ -41,6 +41,7 @@ public class CatalogListAdapter extends ListAdapter<CatalogItem, CatalogItemView
     public void onBindViewHolder(@NonNull CatalogItemViewHolder holder, int position) {
         CatalogItem item = getItem(position);
         CatalogItemBinding binding = holder.getBinding();
+        String imageUrl = imagesUrl + drinkType + "/" + item.getIconName();
         binding.drinkTitle.setText(item.getName());
         binding.drinkCost.setText(
                 String.format(
@@ -48,10 +49,10 @@ public class CatalogListAdapter extends ListAdapter<CatalogItem, CatalogItemView
                         item.getPrice()
                 )
         );
-        binding.getRoot().setOnClickListener(view -> listener.onItemClick(item)
+        binding.getRoot().setOnClickListener(view -> listener.onItemClick(item, imageUrl)
         );
-        Picasso.get()
-                .load(imageUrl + drinkType + "/" + item.getIconName())
+        Picasso.with(context)
+                .load(imageUrl)
                 .placeholder(R.drawable.ic_coffee_logo)
                 .error(R.drawable.ic_coffee_error)
                 .fit()

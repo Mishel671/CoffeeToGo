@@ -7,6 +7,8 @@ public class AppPreferences {
 
     private static final String NAME_PREF = "preferences";
     private static final String TOKEN_KEY = "token";
+    private static final String MAIL_KEY = "mail";
+    private static final String LOGIN_KEY = "login";
 
     private SharedPreferences preferences;
 
@@ -28,11 +30,32 @@ public class AppPreferences {
         }
     }
 
+    public void clear(){
+        preferences.edit().clear().apply();
+    }
+
     public void setToken(String token) {
         preferences.edit().putString(TOKEN_KEY, token).apply();
     }
 
     public String getToken() {
-        return preferences.getString(TOKEN_KEY, "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJodHRwOi8vMC4wLjAuMDo4MDgwLyIsImlzcyI6Imh0dHA6Ly8wLjAuMC4wOjgwODAvIiwibG9naW4iOiJyb290In0.GTSOsAV92PeJ0rwyqYsjHDJaj-Q-XdkrO1A08BRE560");
+        return preferences.getString(TOKEN_KEY, "");
     }
+
+    public void setMail(String mail) {
+        preferences.edit().putString(MAIL_KEY, mail).apply();
+    }
+
+    public String getMail() {
+        return preferences.getString(MAIL_KEY, "");
+    }
+
+    public void setLogin(String login) {
+        preferences.edit().putString(LOGIN_KEY, login).apply();
+    }
+
+    public String getLogin() {
+        return preferences.getString(LOGIN_KEY, "");
+    }
+
 }

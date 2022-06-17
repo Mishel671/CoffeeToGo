@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/button_minus.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/button_next_background.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/button_sign_out.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/catalog_item_background.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/detail_button_minus.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/detail_button_plus.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/detail_catalog_background.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/ic_coffee_detail_load.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/ic_detail_minus.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/ic_detail_plus.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/drawable/ic_minus.xml" value="0.1925" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/cart_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/catalog_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/fragment_blank.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/fragment_cart.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/fragment_catalog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/fragment_detail_catalog.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/fragment_user.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/dzuba/AndroidStudioProjects/CoffeToGo/app/src/main/res/layout/sample_blur_view.xml" value="0.25416666666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

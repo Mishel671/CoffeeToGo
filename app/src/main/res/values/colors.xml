@@ -13,4 +13,5 @@
     <color name="error_color">#D85454</color>
     <color name="cart_button">#9FC6FF</color>
     <color name="badge_color">#FF8181</color>
+    <color name="detail_catalog_color">#C4FFFFFF</color>
 </resources>

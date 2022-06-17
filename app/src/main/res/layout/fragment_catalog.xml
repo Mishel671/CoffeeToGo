@@ -8,7 +8,7 @@
     tools:context=".presentation.bottommenucontainer.catalog.CatalogFragment">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
@@ -28,10 +28,10 @@
         app:layout_constraintDimensionRatio="1"
         android:background="@drawable/button_cart"
         android:stateListAnimator="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
+        app:layout_constraintBottom_toBottomOf="@+id/title"
         app:layout_constraintEnd_toEndOf="@+id/tabLayout"
         app:layout_constraintStart_toEndOf="@+id/tabLayout"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        app:layout_constraintTop_toTopOf="@+id/title" />
 
     <FrameLayout
         android:id="@+id/badgeFrame"
@@ -65,7 +65,7 @@
         android:layout_marginTop="15dp"
         app:layout_constraintEnd_toStartOf="@+id/tabButtonRight"
         app:layout_constraintStart_toEndOf="@+id/tabButtonLeft"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/title" />
 
     <ImageButton
         android:id="@+id/tabButtonLeft"

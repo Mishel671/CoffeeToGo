@@ -5,22 +5,29 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.coffetogo.R;
 import com.example.coffetogo.databinding.FragmentSignInBinding;
 import com.example.coffetogo.presentation.bottommenucontainer.BottomMenuContainerFragment;
-import com.example.coffetogo.presentation.bottommenucontainer.catalog.CatalogFragment;
 
 public class SignInFragment extends Fragment {
 
     private FragmentSignInBinding binding;
     private SignInViewModel viewModel;
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setBlueStatusBar();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -43,8 +50,11 @@ public class SignInFragment extends Fragment {
             Toast.makeText(requireActivity(), error, Toast.LENGTH_SHORT).show();
         });
 
-        viewModel.getSuccessLogin().observe(getViewLifecycleOwner(), unit -> {
-            launchCatalogFragment();
+        viewModel.getSuccessLogin().observe(getViewLifecycleOwner(), isLaunch -> {
+            if(isLaunch){
+                viewModel.clearSuccessLogin();
+                launchCatalogFragment();
+            }
         });
     }
 
@@ -52,6 +62,13 @@ public class SignInFragment extends Fragment {
         requireActivity().getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragmentContainer, BottomMenuContainerFragment.newInstance())
                 .commit();
+    }
+
+
+    private void setBlueStatusBar(){
+        Window screen =  requireActivity().getWindow();
+        screen.setStatusBarColor(ContextCompat.getColor(requireActivity(), R.color.blue));
+        screen.getDecorView().setSystemUiVisibility(0);
     }
 
     @Override

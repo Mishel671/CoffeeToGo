@@ -6,7 +6,7 @@ import com.example.coffetogo.databinding.CartItemBinding;
 
 public class CartItemViewHolder extends RecyclerView.ViewHolder {
 
-    private CartItemBinding binding;
+    private final CartItemBinding binding;
 
     public CartItemBinding getBinding() {
         return binding;

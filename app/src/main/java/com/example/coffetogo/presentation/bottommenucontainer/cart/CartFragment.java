@@ -1,6 +1,7 @@
 package com.example.coffetogo.presentation.bottommenucontainer.cart;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,12 +39,14 @@ public class CartFragment extends Fragment {
 
     private void setRecyclerView() {
         OnChangeItemCountListener listener = (cartItem, deltaCount) -> {
+
             viewModel.changeCountItem(cartItem, deltaCount);
         };
         CartListAdapter adapter = new CartListAdapter(requireActivity(), listener);
         binding.cartRecyclerView.setAdapter(adapter);
         viewModel.getCartList().observe(getViewLifecycleOwner(), cartList -> {
             adapter.submitList(cartList);
+            Log.d("CartLog", String.valueOf(cartList.size()));
         });
         viewModel.getResultCost().observe(getViewLifecycleOwner(), resultCost -> {
             binding.resultCost.setText(
@@ -51,6 +54,7 @@ public class CartFragment extends Fragment {
             );
         });
     }
+
 
     @Override
     public void onDestroy() {

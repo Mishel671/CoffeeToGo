@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.fragmentContainer, BottomMenuContainerFragment.newInstance())
+                    .replace(R.id.fragmentContainer, SplashFragment.newInstance())
                     .commit();
         }
     }

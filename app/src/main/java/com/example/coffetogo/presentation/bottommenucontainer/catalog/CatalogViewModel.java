@@ -58,7 +58,8 @@ public class CatalogViewModel extends AndroidViewModel {
         Disposable disposable = apiService.getCategories()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(categoryItems -> categoryList.setValue(categoryItems));
+                .subscribe(categoryItems -> categoryList.setValue(categoryItems),
+                        throwable -> {});
         compositeDisposable.add(disposable);
     }
 

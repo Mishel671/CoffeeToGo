@@ -25,7 +25,6 @@ public class CartItemCallback extends DiffUtil.ItemCallback<CartItem> {
                         oldItem.getItemCount() != newItem.getItemCount()) {
             equals = false;
         }
-        Log.d("CartItemCallbackLog", String.valueOf(equals));
         return equals;
     }
 

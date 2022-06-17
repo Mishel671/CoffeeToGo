@@ -25,21 +25,16 @@ public class SignInViewModel extends AndroidViewModel {
     private Disposable disposable;
 
 
-    private MutableLiveData<Unit> successLogin;
-
-    private MutableLiveData<String> error;
-
-    public LiveData<Unit> getSuccessLogin() {
-        if (successLogin == null) {
-            successLogin = new MutableLiveData<>();
-        }
+    private MutableLiveData<Boolean> successLogin= new MutableLiveData<>();
+    public LiveData<Boolean> getSuccessLogin() {
         return successLogin;
     }
+    public void clearSuccessLogin() {
+        successLogin.setValue(false);
+    }
 
+    private MutableLiveData<String> error = new MutableLiveData<>();
     public LiveData<String> getError() {
-        if (error == null) {
-            error = new MutableLiveData<>();
-        }
         return error;
     }
 
@@ -54,7 +49,9 @@ public class SignInViewModel extends AndroidViewModel {
                         @Override
                         public void accept(UserInfo userInfo) throws Exception {
                             AppPreferences.getInstance().setToken(userInfo.getToken());
-                            successLogin.setValue(Unit.INSTANCE);
+                            AppPreferences.getInstance().setMail(userInfo.getMail());
+                            AppPreferences.getInstance().setLogin(userInfo.getLogin());
+                            successLogin.setValue(true);
                         }
                     }, new Consumer<Throwable>() {
                         @Override
@@ -67,12 +64,14 @@ public class SignInViewModel extends AndroidViewModel {
         }
     }
 
+
+
     @Override
     protected void onCleared() {
-        super.onCleared();
         if (disposable != null) {
             disposable.dispose();
         }
+        super.onCleared();
     }
 
     public SignInViewModel(@NonNull Application application) {

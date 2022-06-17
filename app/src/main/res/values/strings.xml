@@ -19,4 +19,5 @@
     <string name="drink_cost">%d р</string>
     <string name="cart_title">%d. %s - %d руб</string>
     <string name="result_cost">Итого: %d руб.</string>
+    <string name="sign_out">Выйти из аккаунта</string>
 </resources>
